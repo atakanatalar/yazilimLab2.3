@@ -1,0 +1,16 @@
+<header class="header">
+    <mat-toolbar color="primary">
+        <span>Akademik Arama Sistemi</span>
+        <span class="example-spacer"></span>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                {{_userMail}}
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" (click)=logOut() routerLink="/login">Çıkış yap</a></li>
+            </ul>
+        </div>
+    </mat-toolbar>
+</header>

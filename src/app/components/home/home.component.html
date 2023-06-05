@@ -1,0 +1,40 @@
+<app-header></app-header>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col mb-3">
+                <input type="text" [(ngModel)]="filterTextByName" class="form-control" placeholder="Anahtar kelime">
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">İsim</th>
+                        <th scope="col">Soyisim</th>
+                        <th scope="col">Yayin Basligi</th>
+                        <th scope="col">Yil</th>
+                        <th scope="col">Yayin Yeri</th>
+                        <th scope="col">Tur</th>
+                      </tr>
+                    </thead>
+                    <ng-container *ngFor="let user of allUsers | arastirmaciIsim : filterTextByName" >
+                      <tr *ngFor="let yayin of user.yayinlar" >
+                        <td routerLink="/user/{{user.arastirmaci.aid}}">{{user.arastirmaci.isim}}</td>
+                        <td routerLink="/user/{{user.arastirmaci.aid}}">{{user.arastirmaci.soyisim}}</td>
+                        <td routerLink="/yayin/{{yayin.yid}}">{{yayin.baslik}}</td>
+                        <td>{{yayin.yil}}</td>
+                        <td>{{yayin.yayinYeri}}</td>
+                        <td>{{yayin.tur.turAdi}}</td>
+                      </tr>
+                    </ng-container>
+                  </table>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+</main>

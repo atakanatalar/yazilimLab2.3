@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+<body class="text-center" onload="draw()">
+    <main class="form-signin">
+        <form [formGroup]="loginForm">
+            <!-- <img class="mb-4" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+            <h1 class="h3 mb-3 fw-normal">Araştırmacı Ekle</h1>
+            <p class="btn btn-danger" *ngIf="faultText">{{faultText}}</p>
+            <div class="form-floating">
+                <input formControlName="isim" type="text" class="form-control" id="floatingFirstName" placeholder="name@example.com">
+                <label for="floatingInput">Araştırmacı Adı</label>
+            </div>
+            <div class="form-floating">
+                <input formControlName="soyisim" type="text" class="form-control" id="floatingLastName" placeholder="Password">
+                <label for="floatingPassword">Araştırmacı Soyadı</label>
+            </div>
+            <div class="form-floating">
+                <input formControlName="baslik" type="text" class="form-control" id="floatingPublicationName" placeholder="PublicationName">
+                <label for="floatingPublicationName">Yayın Adı</label>
+            </div>
+            <div class="form-floating">
+                <input formControlName="yil" type="text" class="form-control" id="floatingPublicationYear" placeholder="PublicationYear">
+                <label for="floatingPublicationYear">Yayın Tarihi</label>
+            </div>
+            <div class="form-floating">
+                <input formControlName="yayinyeri" type="text" class="form-control" id="floatingPublicationPlace" placeholder="PublicationPlace">
+                <label for="floatingPublicationPlace">Yayın Yeri</label>
+            </div>
+            <div class="form-floating">
+                <input formControlName="tur" type="text" class="form-control" id="floatingPublicationType" placeholder="PublicationType">
+                <label for="floatingPublicationType">Yayın Tipi</label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" (click)="addUser()">Gönder</button>
+            <!-- <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p> -->
+        </form>
+    </main>
+
+    <div id="viz"></div>
+</body>
